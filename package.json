@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/vaselisk999/ReadMeGenerator/issues"
   },
-  "homepage": "https://github.com/vaselisk999/ReadMeGenerator#readme"
+  "homepage": "https://github.com/vaselisk999/ReadMeGenerator#readme",
+  "dependencies": {
+    "inquirer": "^6.5.0"
+  }
 }

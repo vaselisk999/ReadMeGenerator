@@ -2,6 +2,43 @@ const inquirer = require('inquirer');
 const path = require('path');
 const fs = require('fs');
 
+function template(responce){
+return `
+    #${responce.title}
+
+    ##Desciption
+    ${responce.description}
+
+    ##Table of Contents
+    ${responce.contents}
+    
+    ##installation
+    ${responce.installation}
+
+    // npm install 
+
+    ##usage
+    ${responce.usage}
+
+    ##license
+    ${responce.license}
+    
+    ##contributing
+    ${responce.contributing}
+
+    ##Tests
+    ${responce.tests}
+    
+    ## Review
+    ${responce.review}
+        * The URL of the deployed application. [Application link](https://vaselisk999.github.io/ReadMeGenerator/).
+
+        * The URL of the GitHub repository. [Repository link](https://github.com/vaselisk999/ReadMeGenerator).
+`;
+}
+
+const content = ["installation", "usage", "license", "contributing"];
+
 // array of questions for user
 const questions = [
     {
@@ -9,63 +46,51 @@ const questions = [
         message: 'The title of my project',
         name: 'title',
     },
-    // Sections entitled:
     {
         type: 'input',
         message: 'Description',
-        name: 'Title',
+        name: 'description',
     },
-
-    // Sections entitled:
-
     {
-        type: 'input',
+        type: 'list',
         message: 'Table of Contents',
-        name: 'Title',
+        name: 'contents',
+        choices: content,
     },
-
-    // Sections entitled:
-
     {
         type: 'input',
         message: 'Installation',
-        name: 'Title',
+        name: 'installation',
     },
-
-    // Sections entitled:
-
     {
         type: 'input',
         message: 'Usage',
-        name: 'Title',
+        name: 'usage',
     },
-    // Sections entitled:
     {
         type: 'input',
         message: 'License',
-        name: 'Title',
+        name: 'license',
     },
-    // Sections entitled:
     {
         type: 'input',
         message: 'Contributing',
-        name: 'Title',
+        name: 'contributing',
     },
     // Sections entitled:
     {
         type: 'input',
         message: 'Tests',
-        name: 'Title',
+        name: 'tests',
     },
-    // Sections entitled:
     {
         type: 'input',
         message: 'Questions',
-        name: 'Title',
+        name: 'review',
     },
-
-
 ];
+
+let 
 
 // function to write README file
 function writeToFile(fileName, data) {

@@ -3,8 +3,6 @@ function setQuestions(res) {
     if (!res.match(req)) {
         return (
             `
-* The URL of the deployed application. [Application link](https://${res}.github.io/ReadMeGenerator/).
-    
 * The URL of the GitHub repository. [Repository link](https://github.com/${res}/ReadMeGenerator).
 `
         )

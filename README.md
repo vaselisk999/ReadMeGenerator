@@ -40,8 +40,6 @@ The above copyright notice and this permission notice shall be included in all c
     
 ## Questions
     
-* The URL of the deployed application. [Application link](https://vaselisk999.github.io/ReadMeGenerator/).
-    
 * The URL of the GitHub repository. [Repository link](https://github.com/vaselisk999/ReadMeGenerator).
 
 

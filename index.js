@@ -16,12 +16,14 @@ ${setLicense(responce.license).bage}
     ${responce.description}
 
     ${contents(responce.contents)}
-
 ## Installation
     ${responce.installation}
 
 ## Usage
     ${responce.usage}
+
+* link to [Inquirer package](https://www.npmjs.com/package/inquirer).
+* link to [professional-readme-guide](https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide).
 
 ## License
     ${setLicense(responce.license).text}

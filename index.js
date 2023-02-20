@@ -4,6 +4,22 @@ const fs = require('fs');
 const setLicense = require('./utils/setLicense');
 const contents = require('./utils/contents');
 
+function questions(res) {
+    const req = "/^\S+@\S+\.\S+$/"
+    if (req.test(res)) {
+        return (
+            `
+* The URL of the deployed application. [Application link](https://${res}.github.io/ReadMeGenerator/).
+    
+* The URL of the GitHub repository. [Repository link](https://github.com/${res}/ReadMeGenerator).
+`
+        )
+    }
+    return (
+`please reach on this email with additional questions ${res}`
+    )
+
+}
 
 function template(responce) {
     return (`
@@ -33,11 +49,9 @@ ${setLicense(responce.license).bage}
 ## Tests
     ${responce.tests}
     
-## Review
-    
-* The URL of the deployed application. [Application link](https://vaselisk999.github.io/${responce.review}/).
+## Questions
+    ${setLicense(responce.review)}
 
-* The URL of the GitHub repository. [Repository link](https://github.com/vaselisk999/${responce.review}).
 `);
 }
 
@@ -86,7 +100,7 @@ const questions = [
     },
     {
         type: 'input',
-        message: 'Questions to or Review(fill progect name)',
+        message: 'Questions (fill with username or email)',
         name: 'review',
     },
 ];

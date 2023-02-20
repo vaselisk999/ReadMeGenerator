@@ -3,24 +3,9 @@ const path = require('path');
 const fs = require('fs');
 const setLicense = require('./utils/setLicense');
 const contents = require('./utils/contents');
+const setQuestions = require('./utils/setQuestions');
 
-function questions(res) {
-    const req = "/^\S+@\S+\.\S+$/"
-    if (req.test(res)) {
-        return (
-            `
-* The URL of the deployed application. [Application link](https://${res}.github.io/ReadMeGenerator/).
-    
-* The URL of the GitHub repository. [Repository link](https://github.com/${res}/ReadMeGenerator).
-`
-        )
-    }
-    return (
-`please reach on this email with additional questions ${res}`
-    )
-
-}
-
+// readme file template
 function template(responce) {
     return (`
 ${setLicense(responce.license).bage}
@@ -34,7 +19,6 @@ ${setLicense(responce.license).bage}
 
 ## Installation
     ${responce.installation}
-    // npm install 
 
 ## Usage
     ${responce.usage}
@@ -50,7 +34,7 @@ ${setLicense(responce.license).bage}
     ${responce.tests}
     
 ## Questions
-    ${setLicense(responce.review)}
+    ${setQuestions(responce.review)}
 
 `);
 }

@@ -24,6 +24,7 @@ ${setLicense(responce.license).bage}
 
 * link to [Inquirer package](https://www.npmjs.com/package/inquirer).
 * link to [professional-readme-guide](https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide).
+* link to [video-guide](https://drive.google.com/file/d/1J_x-fCq8-ysSkveiweIbdckYIJ3cI0XA/view).
 
 ## License
     ${setLicense(responce.license).text}
